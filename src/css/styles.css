@@ -37,6 +37,47 @@
     animation: clouds-animation 20s infinite linear;
 }
 
+.jump-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 90%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #1b42f1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.jump-btn:hover {
+    background-color: #45a049;
+}
+
+.refresh-btn {
+    position: absolute;
+    bottom: 375px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fcf811;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: none;
+}
+
+.refresh-btn:hover {
+ 
+    background-color: #45a049;
+
+}
+
 @keyframes pipe-animation {
     from {
         right: -80px;
@@ -79,4 +120,29 @@
     to {
         right: 100%;
     }
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+    .game-board {
+        height: 300px; /* Reduz a altura para telas menores */
+    }
+
+    .mario {
+        width: 100px; /* Reduz o tamanho do Mario para telas menores */
+    }
+
+    .pipe {
+        width: 60px; /* Reduz o tamanho do cano para telas menores */
+    }
+
+    .clouds {
+        width: 100%; /* Faz com que as nuvens ocupem toda a largura */
+    }
+}
+
+/* Imagens responsivas */
+.clouds, .mario, .pipe {
+    max-width: 100%; /* Assegura que as imagens não ultrapassem seu contêiner */
+    height: auto; /* Mantém a proporção de altura */
 }

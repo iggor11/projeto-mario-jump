@@ -1,5 +1,7 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const jumpBtn = document.getElementById('jump-btn');
+const refreshBtn = document.getElementById('refresh-btn');
 
 const jump = () => {
     mario.classList.add('jump');
@@ -8,6 +10,8 @@ const jump = () => {
     mario.classList.remove('jump');   
     }, 500);
 }
+
+jumpBtn.addEventListener('click', jump);
 
 const loop = setInterval(() => {
 
@@ -30,8 +34,16 @@ const loop = setInterval(() => {
 
         clearInterval(loop);
 
+        refreshBtn.style.display = 'block';
+
     }                                                                     
 
 }, 10);
+
+refreshBtn.addEventListener('click', () => {
+
+    location.reload();
+    
+});
 
 document.addEventListener('keydown', jump);
