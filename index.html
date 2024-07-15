@@ -17,8 +17,20 @@
         <img src="./src/imagens/mario.gif" class="mario">
         <img src="./src/imagens/pipe.png" class="pipe">
         
+        <button id="start-btn" class="start-btn">Iniciar Jogo</button>
         <button id="refresh-btn" class="refresh-btn" style="display: none;">TENTE NOVAMENTE</button>
         <button id="jump-btn" class="jump-btn">Jump</button>
+
+        <div class="player-info">
+            <label for="player-name">Nome:</label>
+            <input type="text" id="player-name" placeholder="Digite seu nome">
+            <p>Recorde: <span id="player-record">0</span></p>
+        </div>
+
+        <div class="side-panel">
+            <h2>Recordes</h2>
+            <div id="player-record" class="player-record">0</div>
+        </div>
     </div>
 
 </body>
