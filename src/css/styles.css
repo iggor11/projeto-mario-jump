@@ -14,6 +14,71 @@
     background: linear-gradient(#87ceeb, #e0f6ff);
 }
 
+.start-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #1b42f1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1; /* Garante que o botão esteja acima das animações */
+}
+
+.start-btn:hover {
+    background-color: #45a049;
+}
+
+.player-info {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco transparente para legibilidade */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.player-info label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.player-info input {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.player-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.side-panel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco transparente para legibilidade */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.side-panel p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
 .pipe {
     position: absolute;
     bottom: 0;
@@ -58,7 +123,7 @@
 
 .refresh-btn {
     position: absolute;
-    bottom: 375px;
+    bottom: 300px;
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 20px;

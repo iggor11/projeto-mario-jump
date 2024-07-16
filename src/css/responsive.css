@@ -4,6 +4,18 @@
         height: 300px; /* Reduz a altura para telas menores */
     }
 
+    .start-btn {
+        font-size: 14px; /* Reduz o tamanho da fonte do botão para telas menores */
+    }
+
+    .player-info {
+        font-size: 12px; /* Reduz o tamanho da fonte para telas menores */
+    }
+
+    .top-score {
+        left: 10px; /* Ajusta a posição para telas menores */
+    }
+
     .mario {
         width: 100px; /* Reduz o tamanho do Mario para telas menores */
     }
