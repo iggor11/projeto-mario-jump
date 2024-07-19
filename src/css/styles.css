@@ -1,188 +1,208 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.game-board {
-    width: 100%;
-    height: 500px;
-    border-bottom: 15px solid #17cf11;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(#87ceeb, #e0f6ff);
-}
-
-.start-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #1b42f1;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 1; /* Garante que o botão esteja acima das animações */
-}
-
-.start-btn:hover {
-    background-color: #45a049;
-}
-
-.player-info {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    background: rgba(255, 255, 255, 0.8); /* Fundo branco transparente para legibilidade */
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.player-info label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.player-info input {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.player-info p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.side-panel {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.8); /* Fundo branco transparente para legibilidade */
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.side-panel p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.pipe {
-    position: absolute;
-    bottom: 0;
-    width: 80px;
-    animation: pipe-animation 1.5s infinite linear;
-}
-
-.mario {
-    width: 150px;
-    position: absolute;
-    bottom: 0px;
-}
-
-.jump {
-    animation: jump 500ms ease-out;
-}
-
-.clouds {
-    position: absolute;
-    width: 550px;
-    animation: clouds-animation 20s infinite linear;
-}
-
-.jump-btn {
-    position: absolute;
-    bottom: 50px;
-    left: 90%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #1b42f1;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.jump-btn:hover {
-    background-color: #45a049;
-}
-
-.refresh-btn {
-    position: absolute;
-    bottom: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #fcf811;
-    color: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none;
-}
-
-.refresh-btn:hover {
- 
-    background-color: #45a049;
-
-}
-
-@keyframes pipe-animation {
-    from {
-        right: -80px;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    to {
-        right: 100%;
+    body {
+        background-color: #8b4513; /* Marrom escuro como cor de base */
+        background-image: 
+        linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%),
+        linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%);
+        background-size: 20px 20px; /* Tamanho do padrão */
+        flex-direction: column;
+        margin: 0; /* Remove margens padrão */
+        padding: 0; /* Remove preenchimento padrão */
     }
-}
 
-@keyframes jump {
-
-    0% {
-        bottom: 0;
+    .mobile-instruction {
+        display: none; /* Inicialmente oculta */
+        position: relative; /* Alterado para posição relativa */
+        margin-top: 40px; /* Ajuste negativo para posicionar acima do side-panel */
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1000; /* Z-index alto para garantir que esteja acima de outros elementos */
     }
     
-    40% {
-        bottom: 180px;
+
+    .side-panel {
+        position: fixed;
+        bottom: 20px; /* Distância do fundo da página */
+        left: 50%; /* Alinha o painel horizontalmente no centro */
+        transform: translateX(-50%); /* Corrige o alinhamento */
+        text-align: center;
+        color: rgb(192, 192, 192);
+        background: rgb(0, 0, 0); /* Fundo preto */
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 1; /* Garante que o painel esteja acima do fundo preto */
     }
 
-    50% {
-        bottom: 180px;
+    .game-board {
+        width: 100%;
+        height: 500px;
+        border-bottom: 15px solid #17cf11;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(#87ceeb, #e0f6ff);
     }
 
-    60% {
-        bottom: 180px;
+    .start-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #1b42f1;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 1; /* Garante que o botão esteja acima das animações */
     }
 
-    100% {
+    .start-btn:hover {
+        background-color: #45a049;
+    }
+
+    .player-info {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8); /* Fundo branco transparente para legibilidade */
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .player-info label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .player-info input {
+        padding: 5px 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .player-info p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .pipe {
+        position: absolute;
         bottom: 0;
+        width: 80px;
+        animation: pipe-animation 1.5s infinite linear;
     }
 
-}
-
-@keyframes clouds-animation {
-    from {
-        right: -550px;
+    .mario {
+        width: 150px;
+        position: absolute;
+        bottom: 0px;
     }
 
-    to {
-        right: 100%;
+    .jump {
+        animation: jump 500ms ease-out;
     }
-}
+
+    .clouds {
+        position: absolute;
+        width: 550px;
+        animation: clouds-animation 20s infinite linear;
+    }
+
+    .jump-btn {
+        position: absolute;
+        bottom: 50px;
+        left: 90%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #1b42f1;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .jump-btn:hover {
+        background-color: #45a049;
+    }
+
+    .refresh-btn {
+        position: absolute;
+        bottom: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #fcf811;
+        color: rgb(0, 0, 0);
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        display: none;
+    }
+
+    .refresh-btn:hover {
+        background-color: #45a049;
+    }
+
+    @keyframes pipe-animation {
+        from {
+            right: -80px;
+        }
+
+        to {
+            right: 100%;
+        }
+    }
+
+    @keyframes jump {
+
+        0% {
+            bottom: 0;
+        }
+        
+        40% {
+            bottom: 180px;
+        }
+
+        50% {
+            bottom: 180px;
+        }
+
+        60% {
+            bottom: 180px;
+        }
+
+        100% {
+            bottom: 0;
+        }
+
+    }
+
+    @keyframes clouds-animation {
+        from {
+            right: -550px;
+        }
+
+        to {
+            right: 100%;
+        }
+    }

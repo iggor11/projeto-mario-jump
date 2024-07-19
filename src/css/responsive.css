@@ -29,8 +29,10 @@
     }
 }
 
-/* Imagens responsivas */
 .clouds, .mario, .pipe {
     max-width: 100%; /* Assegura que as imagens não ultrapassem seu contêiner */
     height: auto; /* Mantém a proporção de altura */
+}
+.mobile-instruction {
+    display: block; /* Exibe apenas em dispositivos móveis */
 }

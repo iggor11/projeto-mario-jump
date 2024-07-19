@@ -155,4 +155,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar a lista de recordes ao carregar a página
     showTopRecords();
+
+    window.onload = function() {
+        var mobileInstruction = document.querySelector('.mobile-instruction');
+        if (window.innerWidth <= 768) {
+            mobileInstruction.style.display = 'block';
+        } else {
+            mobileInstruction.style.display = 'none';
+        }
+    };
 });
